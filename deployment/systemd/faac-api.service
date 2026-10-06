@@ -1,0 +1,22 @@
+[Unit]
+Description=FAAC API
+After=network.target
+
+[Service]
+
+User=koldo
+Group=koldo
+
+WorkingDirectory=/home/koldo/faac-api
+
+ExecStart=/home/koldo/faac-api/.venv/bin/python \
+    -m uvicorn app.main:app \
+    --host 127.0.0.1 \
+    --port 8010 \
+    --workers 1
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
