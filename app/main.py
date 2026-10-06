@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+import tempfile
 import subprocess
+import json
+import os
 
 app = FastAPI()
 
@@ -28,26 +31,49 @@ def health():
 @app.post("/decrypt")
 def decrypt(request: DecryptRequest):
 
-    return {
-        "status": "accepted",
-        "jobs_received": len(request.jobs)
+    payload = {
+        "jobs": [
+            {
+                **job.model_dump(),
+            	"start": "00000000",
+            	"end": "FFFFFFFF"
+            }
+            for job in request.jobs
+    	]
     }
 
+    with tempfile.NamedTemporaryFile(
+        mode="w",
+        suffix=".json",
+        delete=False
+    ) as f:
 
-@app.get("/test-script")
-def test_script():
+        json.dump(payload, f)
 
-    result = subprocess.run(
-        [
-            "/home/koldo/faac-api/scripts/invoke_keeloq_f2.sh",
-            "--help"
-        ],
-        capture_output=True,
-        text=True
-    )
+        jobs_file = f.name
 
-    return {
-        "returncode": result.returncode,
-        "stdout": result.stdout,
-        "stderr": result.stderr
-    }
+    try:
+        result = subprocess.run(
+            [
+                "/home/koldo/faac-api/scripts/invoke_keeloq_f2.sh",
+                "--jobs-file",
+                jobs_file,
+                "--leave-running"
+            ],
+            capture_output=True,
+            text=True
+        )
+    finally:
+        if os.path.exists(jobs_file):    
+            os.unlink(jobs_file)
+    
+    if result.returncode != 0:
+
+        return {
+            "status": "error",
+            "stderr": result.stderr,
+            "stdout": result.stdout
+        }
+
+    return json.loads(result.stdout)
+
