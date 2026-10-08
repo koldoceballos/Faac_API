@@ -1,0 +1,47 @@
+2026-10-08 07:21:02,240 | INFO | FAAC API arrancada
+2026-10-08 07:27:59,401 | INFO | FAAC API arrancada
+2026-10-08 07:30:39,046 | INFO | Decrypt request received (1 jobs)
+2026-10-08 07:30:39,046 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 07:30:39,048 | INFO | Decrypt request received (1 jobs)
+2026-10-08 07:30:39,051 | INFO | Temporary jobs file created: /tmp/tmpbw0oy8p_.json
+2026-10-08 07:31:35,408 | INFO | Script finished rc=0
+2026-10-08 07:31:35,408 | INFO | Decrypt completed successfully
+2026-10-08 07:31:35,408 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313134 status=0x00000006
+2026-10-08 07:34:05,047 | INFO | FAAC API arrancada
+2026-10-08 07:39:57,150 | INFO | FAAC API arrancada
+2026-10-08 08:21:36,608 | INFO | FAAC API arrancada
+2026-10-08 08:40:02,568 | INFO | FAAC API arrancada
+2026-10-08 08:42:34,271 | INFO | FAAC API arrancada
+2026-10-08 09:03:44,522 | INFO | Decrypt request received (1 jobs)
+2026-10-08 09:03:44,522 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 09:03:44,522 | INFO | Temporary jobs file created: /tmp/tmpt1hcu_o_.json
+2026-10-08 09:03:44,538 | INFO | Script finished rc=1
+2026-10-08 09:03:44,538 | ERROR | Decrypt failed: ERROR: AWS CLI no esta instalado o no esta en PATH.
+2026-10-08 09:09:48,555 | INFO | FAAC API arrancada
+2026-10-08 09:54:01,934 | INFO | FAAC API arrancada
+2026-10-08 09:59:57,133 | INFO | FAAC API arrancada
+2026-10-08 10:01:03,024 | INFO | Decrypt request received (1 jobs)
+2026-10-08 10:01:03,024 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 10:01:03,026 | INFO | Temporary jobs file created: /tmp/tmpjktg_qfs.json
+2026-10-08 10:01:03,054 | INFO | Script finished rc=1
+2026-10-08 10:01:03,054 | ERROR | Decrypt failed: ERROR: jq no esta instalado o no esta en PATH.
+2026-10-08 10:04:00,514 | INFO | FAAC API arrancada
+2026-10-08 10:04:08,004 | INFO | Decrypt request received (1 jobs)
+2026-10-08 10:04:08,004 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 10:04:08,006 | INFO | Temporary jobs file created: /tmp/tmph0_ux1wk.json
+2026-10-08 10:05:01,052 | INFO | Script finished rc=0
+2026-10-08 10:05:01,052 | INFO | Decrypt completed successfully
+2026-10-08 10:08:29,589 | INFO | FAAC API arrancada
+2026-10-08 10:08:49,697 | INFO | Decrypt request received (1 jobs)
+2026-10-08 10:08:49,697 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 10:08:49,697 | INFO | Temporary jobs file created: /tmp/tmplxspms4d.json
+2026-10-08 10:09:13,515 | INFO | Script finished rc=0
+2026-10-08 10:09:13,515 | INFO | Decrypt completed successfully
+2026-10-08 10:11:22,543 | INFO | FAAC API arrancada
+2026-10-08 10:11:41,394 | INFO | Decrypt request received (1 jobs)
+2026-10-08 10:11:41,394 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 10:11:41,396 | INFO | Temporary jobs file created: /tmp/tmpyzgemh63.json
+2026-10-08 10:12:09,483 | INFO | Script finished rc=0
+2026-10-08 10:12:09,483 | INFO | Decrypt completed successfully
+2026-10-08 10:12:09,483 | INFO | Request completed in 28.09s
+2026-10-08 10:12:09,483 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313526 status=0x00000006

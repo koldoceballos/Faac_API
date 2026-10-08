@@ -1,0 +1,19 @@
+services:
+
+  faac-api:
+
+    build: .
+
+    container_name: faac-api
+
+    restart: unless-stopped
+
+    ports:
+      - "8011:8010"
+
+    env_file:
+      - .env.docker
+
+    volumes:
+      - ./logs:/app/logs
+      - ${AWS_CONFIG_DIR}:/root/.aws:ro

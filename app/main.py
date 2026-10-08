@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi import Header, HTTPException
 import tempfile
+import time
 import subprocess
 import json
 import os
@@ -10,6 +11,12 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 import re
 from fastapi import HTTPException
+from pathlib import Path
+
+APP_ROOT = Path(os.environ["FAAC_APP_ROOT"])
+SCRIPT_PATH = APP_ROOT / "scripts" / "invoke_keeloq_f2.sh"
+LOG_DIR = APP_ROOT / "logs"
+LOG_DIR.mkdir(exist_ok=True)
 
 API_KEY = os.environ["FAAC_API_KEY"]
 
@@ -19,8 +26,6 @@ app = FastAPI()
 # Logging
 # ==========================================================
 
-LOG_DIR = Path("/home/koldo/faac-api/logs")
-LOG_DIR.mkdir(exist_ok=True)
 
 handler = RotatingFileHandler(
     LOG_DIR / "faac.log",
@@ -111,8 +116,12 @@ def decrypt(
     x_api_key: str = Header(default="")
 ):    
     check_api_key(x_api_key)
+
+    start_time = time.time()
+
     for job in request.jobs:
         validate_job(job)
+    
     logger.info(
         "Decrypt request received (%d jobs)",
         len(request.jobs)
@@ -156,7 +165,7 @@ def decrypt(
     try:
         result = subprocess.run(
             [
-                "/home/koldo/faac-api/scripts/invoke_keeloq_f2.sh",
+                str(SCRIPT_PATH),
                 "--jobs-file",
                 jobs_file,
                 "--leave-running"
