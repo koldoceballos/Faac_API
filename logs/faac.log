@@ -45,3 +45,14 @@
 2026-10-08 10:12:09,483 | INFO | Decrypt completed successfully
 2026-10-08 10:12:09,483 | INFO | Request completed in 28.09s
 2026-10-08 10:12:09,483 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313526 status=0x00000006
+2026-10-08 10:22:44,364 | INFO | FAAC API arrancada
+2026-10-08 10:23:55,517 | INFO | FAAC API arrancada
+2026-10-08 10:24:52,377 | INFO | FAAC API arrancada
+2026-10-08 10:27:58,847 | INFO | FAAC API arrancada
+2026-10-08 10:29:43,040 | INFO | Decrypt request received (1 jobs)
+2026-10-08 10:29:43,040 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 10:29:43,041 | INFO | Temporary jobs file created: /tmp/tmp1kdrzcwk.json
+2026-10-08 10:30:05,228 | INFO | Script finished rc=0
+2026-10-08 10:30:05,228 | INFO | Decrypt completed successfully
+2026-10-08 10:30:05,228 | INFO | Request completed in 22.19s
+2026-10-08 10:30:05,228 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313468 status=0x00000006
