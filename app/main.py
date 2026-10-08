@@ -8,6 +8,8 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
+import re
+from fastapi import HTTPException
 
 API_KEY = os.environ["FAAC_API_KEY"]
 
@@ -66,6 +68,33 @@ def check_api_key(x_api_key: str = Header(default="")):
             detail="Unauthorized"
         )
 
+HEX8_RE = re.compile(r"^[0-9A-Fa-f]{8}$")
+
+
+def validate_job(job: Job):
+
+    frames = [
+        job.frame0,
+        job.frame1,
+        job.frame2,
+        job.frame3
+    ]
+
+    for idx, frame in enumerate(frames):
+
+        if not HEX8_RE.fullmatch(frame):
+
+            raise HTTPException(
+                status_code=400,
+                detail=f"frame{idx} debe contener exactamente 8 caracteres hexadecimales"
+            )
+
+    if len(set(frames)) != 4:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Las cuatro tramas deben ser distintas"
+        )
 
 @app.get("/health")
 def health():
@@ -82,6 +111,8 @@ def decrypt(
     x_api_key: str = Header(default="")
 ):    
     check_api_key(x_api_key)
+    for job in request.jobs:
+        validate_job(job)
     logger.info(
         "Decrypt request received (%d jobs)",
         len(request.jobs)
