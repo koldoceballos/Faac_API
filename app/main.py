@@ -167,8 +167,7 @@ def decrypt(
             [
                 str(SCRIPT_PATH),
                 "--jobs-file",
-                jobs_file,
-                "--leave-running"
+                jobs_file
             ],
             capture_output=True,
             text=True

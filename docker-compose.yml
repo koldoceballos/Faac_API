@@ -12,7 +12,7 @@ services:
       - "8011:8010"
 
     env_file:
-      - .env.docker
+      - .env
 
     volumes:
       - ./logs:/app/logs
