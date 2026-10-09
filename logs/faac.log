@@ -64,3 +64,94 @@
 2026-10-08 14:21:39,038 | INFO | Decrypt completed successfully
 2026-10-08 14:21:39,038 | INFO | Request completed in 51.30s
 2026-10-08 14:21:39,039 | INFO | RESULT found=True key=0x927BDEE6 elapsed_s=0.00108 status=0x00000006
+2026-10-08 14:36:58,207 | INFO | Decrypt request received (1 jobs)
+2026-10-08 14:36:58,208 | INFO | REQUEST job=0 frame0=89B5FDEA frame1=44CBEB43 frame2=1F3F00A2 frame3=9AF3F818
+2026-10-08 14:36:58,209 | INFO | Temporary jobs file created: /tmp/tmpch2qqc5w.json
+2026-10-08 14:38:31,327 | INFO | Script finished rc=0
+2026-10-08 14:38:31,328 | INFO | Decrypt completed successfully
+2026-10-08 14:38:31,328 | INFO | Request completed in 93.12s
+2026-10-08 14:38:31,328 | INFO | RESULT found=True key=0x927BDEE6 elapsed_s=0.001085 status=0x00000006
+2026-10-08 14:42:51,468 | INFO | Decrypt request received (1 jobs)
+2026-10-08 14:42:51,468 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 14:42:51,470 | INFO | Temporary jobs file created: /tmp/tmpcklatxcv.json
+2026-10-08 14:43:27,610 | INFO | Script finished rc=0
+2026-10-08 14:43:27,611 | INFO | Decrypt completed successfully
+2026-10-08 14:43:27,611 | INFO | Request completed in 36.14s
+2026-10-08 14:43:27,611 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313348 status=0x00000006
+2026-10-08 14:44:38,678 | INFO | Decrypt request received (2 jobs)
+2026-10-08 14:44:38,678 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 14:44:38,678 | INFO | REQUEST job=1 frame0=6D184758 frame1=DD8030EA frame2=0B82F5AD frame3=909DD8CD
+2026-10-08 14:44:38,679 | INFO | Temporary jobs file created: /tmp/tmptxb3a8q3.json
+2026-10-08 14:45:27,094 | INFO | Script finished rc=0
+2026-10-08 14:45:27,096 | INFO | Decrypt completed successfully
+2026-10-08 14:45:27,097 | INFO | Request completed in 48.42s
+2026-10-08 14:45:27,098 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.31393 status=0x00000006
+2026-10-08 14:45:27,098 | INFO | RESULT found=True key=0xAFF7D9E5 elapsed_s=13.867971 status=0x00000006
+2026-10-08 14:55:28,981 | INFO | Decrypt request received (2 jobs)
+2026-10-08 14:55:28,983 | INFO | REQUEST job=0 frame0=A98665A3 frame1=49A4F8F6 frame2=D184382D frame3=42332318
+2026-10-08 14:55:28,983 | INFO | REQUEST job=1 frame0=6D184758 frame1=DD8030EA frame2=0B82F5AD frame3=909DD8CD
+2026-10-08 14:55:28,985 | INFO | Temporary jobs file created: /tmp/tmp7b58v5hp.json
+2026-10-08 14:56:26,376 | INFO | Script finished rc=0
+2026-10-08 14:56:26,377 | INFO | Decrypt completed successfully
+2026-10-08 14:56:26,377 | INFO | Request completed in 57.40s
+2026-10-08 14:56:26,377 | INFO | RESULT found=True key=0x3A7F9448 elapsed_s=13.313999 status=0x00000006
+2026-10-08 14:56:26,377 | INFO | RESULT found=True key=0xAFF7D9E5 elapsed_s=13.868437 status=0x00000006
+2026-10-08 15:08:10,189 | INFO | Decrypt request received (1 jobs)
+2026-10-08 15:08:10,192 | INFO | REQUEST job=0 frame0=89B5FDEA frame1=44CBEB43 frame2=1F3F00A2 frame3=9AF3F818
+2026-10-08 15:08:10,197 | INFO | Temporary jobs file created: /tmp/tmpzpvhy6qg.json
+2026-10-08 15:08:39,659 | INFO | Script finished rc=0
+2026-10-08 15:08:39,659 | INFO | Decrypt completed successfully
+2026-10-08 15:08:39,661 | INFO | Request completed in 29.47s
+2026-10-08 15:08:39,662 | INFO | RESULT found=True key=0x927BDEE6 elapsed_s=0.001079 status=0x00000006
+2026-10-08 15:24:40,583 | INFO | Decrypt request received (1 jobs)
+2026-10-08 15:24:40,585 | INFO | REQUEST job=0 frame0=89B5FDEA frame1=44CBEB43 frame2=1F3F00A2 frame3=9AF3F818
+2026-10-08 15:24:40,592 | INFO | Temporary jobs file created: /tmp/tmp48e7n056.json
+2026-10-08 15:25:10,402 | INFO | Script finished rc=0
+2026-10-08 15:25:10,403 | INFO | Decrypt completed successfully
+2026-10-08 15:25:10,404 | INFO | Request completed in 29.82s
+2026-10-08 15:25:10,411 | INFO | RESULT found=True key=0x927BDEE6 elapsed_s=0.001068 status=0x00000006
+2026-10-08 15:34:43,868 | INFO | Decrypt request received (1 jobs)
+2026-10-08 15:34:43,869 | INFO | REQUEST job=0 frame0=89B5FDEA frame1=44CBEB43 frame2=1F3F00A2 frame3=9AF3F818
+2026-10-08 15:34:43,873 | INFO | Temporary jobs file created: /tmp/tmp3ejai9u5.json
+2026-10-08 15:35:16,585 | INFO | Script finished rc=0
+2026-10-08 15:35:16,585 | INFO | Decrypt completed successfully
+2026-10-08 15:35:16,586 | INFO | Request completed in 32.72s
+2026-10-08 15:35:16,587 | INFO | RESULT found=True key=0x927BDEE6 elapsed_s=0.00108 status=0x00000006
+2026-10-09 06:26:49,349 | INFO | FAAC API arrancada
+2026-10-09 07:07:51,134 | INFO | FAAC API arrancada
+2026-10-09 07:14:06,894 | INFO | FAAC API arrancada
+2026-10-09 08:35:46,737 | INFO | FAAC API arrancada
+2026-10-09 09:02:46,694 | INFO | FAAC API arrancada
+2026-10-09 09:14:34,125 | INFO | FAAC API arrancada
+2026-10-09 09:19:54,098 | INFO | FAAC API arrancada
+2026-10-09 09:42:08,567 | INFO | FAAC API arrancada
+2026-10-09 09:48:55,935 | INFO | FAAC API arrancada
+2026-10-09 09:53:50,938 | INFO | FAAC API arrancada
+2026-10-09 09:54:08,533 | INFO | FAAC API arrancada
+2026-10-09 10:12:19,738 | INFO | FAAC API arrancada
+2026-10-09 10:13:33,079 | INFO | FAAC API arrancada
+2026-10-09 10:15:10,132 | INFO | FAAC API arrancada
+2026-10-09 10:15:33,045 | INFO | Decrypt request received (1 jobs)
+2026-10-09 10:15:33,045 | INFO | REQUEST job=0 frame0=5E5A7F55 frame1=E39F76A9 frame2=5F7EA280 frame3=E2457884
+2026-10-09 10:15:33,046 | INFO | Temporary jobs file created: /tmp/tmpcmplgp1d.json
+2026-10-09 10:17:25,673 | INFO | Script finished rc=0
+2026-10-09 10:17:25,674 | INFO | Decrypt completed successfully
+2026-10-09 10:17:25,674 | INFO | Request completed in 112.63s
+2026-10-09 10:17:25,674 | INFO | RESULT found=True key=0xE958CEDC elapsed_s=71.326918 status=0x00000006
+2026-10-09 10:29:44,243 | INFO | FAAC API arrancada
+2026-10-09 10:31:00,680 | INFO | Decrypt request received (1 jobs)
+2026-10-09 10:31:00,681 | INFO | REQUEST job=0 frame0=5E5A7F55 frame1=E39F76A9 frame2=5F7EA280 frame3=E2457884
+2026-10-09 10:31:00,683 | INFO | Temporary jobs file created: /tmp/tmpw3y8ngv0.json
+2026-10-09 10:32:56,957 | INFO | Script finished rc=0
+2026-10-09 10:32:56,958 | INFO | Decrypt completed successfully
+2026-10-09 10:32:56,958 | INFO | Request completed in 116.28s
+2026-10-09 10:32:56,958 | INFO | RESULT found=True key=0xE958CEDC elapsed_s=71.326361 status=0x00000006
+2026-10-09 11:01:44,260 | INFO | FAAC API arrancada
+2026-10-09 11:08:05,671 | INFO | FAAC API arrancada
+2026-10-09 11:12:11,093 | INFO | Decrypt request received (1 jobs)
+2026-10-09 11:12:11,093 | INFO | REQUEST job=0 frame0=5E5A7F55 frame1=E39F76A9 frame2=5F7EA280 frame3=E2457884
+2026-10-09 11:12:11,094 | INFO | Temporary jobs file created: /tmp/tmp1c0xobjd.json
+2026-10-09 11:14:08,317 | INFO | Script finished rc=0
+2026-10-09 11:14:08,317 | INFO | Decrypt completed successfully
+2026-10-09 11:14:08,317 | INFO | Request completed in 117.22s
+2026-10-09 11:14:08,317 | INFO | RESULT found=True key=0xE958CEDC elapsed_s=71.327075 status=0x00000006

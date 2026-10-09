@@ -11,7 +11,18 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 import re
 from fastapi import HTTPException
-from pathlib import Path
+
+from app.database import (
+    initialize_database,
+    get_connection
+)
+
+from app.schemas import (
+    EnqueueRequest,
+    EnqueueResponse
+)
+
+
 
 APP_ROOT = Path(os.environ["FAAC_APP_ROOT"])
 SCRIPT_PATH = APP_ROOT / "scripts" / "invoke_keeloq_f2.sh"
@@ -20,7 +31,11 @@ LOG_DIR.mkdir(exist_ok=True)
 
 API_KEY = os.environ["FAAC_API_KEY"]
 
-app = FastAPI()
+app = FastAPI(
+    title="FAAC API",
+    version="1.0"
+)
+
 
 # ==========================================================
 # Logging
@@ -109,6 +124,163 @@ def health():
         "service": "faac-api"
     }
 
+
+@app.on_event("startup")
+def startup():
+
+    initialize_database()
+
+
+@app.get("/")
+def root():
+
+    return {
+        "service": "FAAC API",
+        "status": "running"
+    }
+
+
+import sqlite3
+
+@app.post(
+    "/enqueue",
+    response_model=EnqueueResponse,
+    status_code=201
+)
+def enqueue_job(req: EnqueueRequest):
+
+    licencia = req.licencia.strip().upper()
+
+    conn = get_connection()
+
+    try:
+
+        existente = conn.execute(
+            """
+            SELECT
+                id,
+                fichero_peticion,
+                estado
+            FROM jobs
+            WHERE licencia = ?
+            AND peticion = ?
+            """,
+            (
+                licencia,
+                req.peticion
+            )
+        ).fetchone()
+
+        #
+        # YA EXISTE
+        #
+        if existente is not None:
+
+            if (
+                existente["fichero_peticion"] !=
+                req.fichero_peticion
+            ):
+                raise HTTPException(
+                    status_code=409,
+                    detail=(
+                        "Existe una peticion con la misma "
+                        "licencia y numero de peticion "
+                        "pero distinto contenido"
+                    )
+                )
+
+            return EnqueueResponse(
+                success=True,
+                id=existente["id"],
+                estado=existente["estado"]
+            )
+
+        #
+        # NUEVO REGISTRO
+        #
+        cur = conn.execute(
+            """
+            INSERT INTO jobs
+            (
+                licencia,
+                peticion,
+                fichero_peticion,
+                estado
+            )
+            VALUES
+            (
+                ?, ?, ?, ?
+            )
+            """,
+            (
+                licencia,
+                req.peticion,
+                req.fichero_peticion,
+                "PENDING"
+            )
+        )
+
+        conn.commit()
+
+        return EnqueueResponse(
+            success=True,
+            id=cur.lastrowid,
+            estado="PENDING"
+        )
+
+    except HTTPException:
+
+        conn.rollback()
+        raise
+
+    except sqlite3.IntegrityError:
+
+        conn.rollback()
+
+        existente = conn.execute(
+            """
+            SELECT
+                id,
+                fichero_peticion,
+                estado
+            FROM jobs
+            WHERE licencia = ?
+            AND peticion = ?
+            """,
+            (
+                licencia,
+                req.peticion
+            )
+        ).fetchone()
+
+        if (
+            existente is not None and
+            existente["fichero_peticion"] ==
+            req.fichero_peticion
+        ):
+            return EnqueueResponse(
+                success=True,
+                id=existente["id"],
+                estado=existente["estado"]
+            )
+
+        raise HTTPException(
+            status_code=409,
+            detail="Conflicto de peticion"
+        )
+
+    except Exception as ex:
+
+        conn.rollback()
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex)
+        )
+
+    finally:
+
+        conn.close()
 
 @app.post("/decrypt")
 def decrypt(
